@@ -1,0 +1,135 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f1f5f9;
+  --text-dim: #94a3b8;
+  --accent-blue: #38bdf8;
+  --accent-green: #4ade80;
+  --border: #334155;
+  --danger: #fb7185;
+}
+
+body.light-theme {
+  --bg-color: #f1f5f9;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-dim: #64748b;
+  --border: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#root { width: 100%; }
+
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle { color: var(--text-dim); margin-bottom: 40px; }
+
+/* FORMULARZ */
+.swim-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+.swim-form input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-main);
+  color-scheme: dark;
+}
+
+body.light-theme .swim-form input { color-scheme: light; }
+
+.swim-form button {
+  background: var(--accent-blue);
+  color: #0f172a;
+  border: none;
+  padding: 0 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ERROR BANNER */
+.error-banner {
+  background: rgba(251, 113, 133, 0.15);
+  color: var(--danger);
+  padding: 12px 25px;
+  border-radius: 10px;
+  border: 1px solid var(--danger);
+  margin-bottom: 30px;
+  animation: slideIn 0.3s ease;
+  width: fit-content;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* DASHBOARD */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.session-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  position: relative;
+  text-align: left;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: none; border: none;
+  color: var(--danger); font-size: 20px; cursor: pointer;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px; right: 20px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background: var(--card-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
